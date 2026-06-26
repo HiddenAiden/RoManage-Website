@@ -11,6 +11,8 @@
   --button-text: #ffffff;
   --header-bg: rgba(245, 245, 245, 0.94);
   --code-bg: #eceef1;
+  --support: #ff424d;
+  --support-text: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +28,8 @@
     --button-text: #0d1117;
     --header-bg: rgba(13, 17, 23, 0.92);
     --code-bg: #202936;
+    --support: #ff6b73;
+    --support-text: #14171d;
   }
 }
 
@@ -202,6 +206,12 @@ dd {
 .button.secondary {
   background: var(--surface);
   color: var(--black);
+}
+
+.button.support {
+  border-color: var(--support);
+  background: var(--support);
+  color: var(--support-text);
 }
 
 .group-card,
