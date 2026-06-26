@@ -342,6 +342,40 @@ footer span:first-child {
   font-weight: 800;
 }
 
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--text);
+}
+
+.legal-page {
+  width: min(860px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.legal-page h1 {
+  max-width: 860px;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.legal-section {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+
+.legal-section h2 {
+  font-size: 1.45rem;
+}
+
+.legal-section p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(14px);
