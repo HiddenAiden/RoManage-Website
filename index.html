@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RoManager V2</title>
-    <meta name="description" content="RoManager V2 is a Discord-to-Roblox management bot for verification, group setup, rank controls, and moderation.">
+    <meta name="description" content="RoManager V2 is a Roblox group management bot for Discord.">
     <link rel="stylesheet" href="assets/styles.css">
   </head>
   <body>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="RoManager V2 home">
-        <span class="brand-mark">R</span>
+        <span class="brand-mark"></span>
         <span>RoManager V2</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#features">Features</a>
-        <a href="#security">Security</a>
+        <a href="#tools">Tools</a>
+        <a href="#permissions">Permissions</a>
         <a href="#setup">Setup</a>
       </nav>
     </header>
@@ -23,106 +23,121 @@
     <main id="top">
       <section class="hero section">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Discord to Roblox operations</p>
-          <h1>Manage Roblox groups from Discord without the mess.</h1>
+          <p class="eyebrow">Roblox group control</p>
+          <h1>Run your Roblox group from Discord.</h1>
           <p class="lead">
-            RoManager V2 handles account verification, per-server group setup, rank changes, join requests, announcements, and game bans from one focused bot.
+            RoManager V2 connects Discord servers to Roblox groups for verification, ranks, join requests, announcements, and moderation.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#features">Explore Features</a>
-            <a class="button secondary" href="#setup">Setup Flow</a>
+            <a class="button primary" href="#tools">See Tools</a>
+            <a class="button secondary" href="#setup">Setup</a>
           </div>
         </div>
 
-        <aside class="command-panel reveal" aria-label="Command preview">
-          <div class="terminal-header">
-            <span></span>
-            <span></span>
-            <span></span>
+        <aside class="roblox-panel reveal" aria-label="Roblox group preview">
+          <div class="preview-top">
+            <div class="group-icon"></div>
+            <div>
+              <strong>Linked Group</strong>
+              <span>Configured with /setup</span>
+            </div>
           </div>
-          <div class="terminal-lines">
-            <p><strong>/setup</strong> group-id:763014161</p>
-            <p><strong>/verify</strong> user:HiddenAiden</p>
-            <p><strong>/switch-account</strong> user:BuilderAlt</p>
-            <p><strong>/role</strong> member:username role:Supervisor</p>
+          <div class="stat-row">
+            <span>Verified users</span>
+            <strong>Multi-account</strong>
           </div>
+          <div class="stat-row">
+            <span>Rank actions</span>
+            <strong>Permission checked</strong>
+          </div>
+          <div class="stat-row">
+            <span>Server config</span>
+            <strong>Per Discord</strong>
+          </div>
+          <div class="command-strip">/setup group-id:123456</div>
         </aside>
       </section>
 
-      <section id="features" class="section">
+      <section id="tools" class="section">
         <div class="section-heading reveal">
-          <p class="eyebrow">What it does</p>
-          <h2>Built for Roblox group teams</h2>
-          <p>Keep routine Roblox management inside Discord while still checking Roblox-side permissions before sensitive actions run.</p>
+          <p class="eyebrow">Bot tools</p>
+          <h2>Built around Roblox group work.</h2>
+          <p>Commands are focused on the jobs group staff actually repeat: verifying accounts, changing roles, handling requests, and checking users.</p>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature reveal">
-            <span class="feature-icon">01</span>
-            <h3>Account Verification</h3>
-            <p>Verify through RoVer when available, or use RoManager V2's profile challenge system when RoVer is not configured.</p>
+        <div class="tool-grid">
+          <article class="tool-card reveal">
+            <h3>Verify Roblox Accounts</h3>
+            <p>Use RoVer when available, or verify through a profile challenge handled by the bot.</p>
+            <code>/verify user:username</code>
           </article>
-          <article class="feature reveal">
-            <span class="feature-icon">02</span>
-            <h3>Multiple Accounts</h3>
-            <p>Save several Roblox accounts, list them, switch the selected account per server, and unverify old accounts.</p>
+          <article class="tool-card reveal">
+            <h3>Save Multiple Accounts</h3>
+            <p>Keep multiple Roblox accounts saved, switch selected accounts, and remove accounts you no longer use.</p>
+            <code>/switch-account user:username</code>
           </article>
-          <article class="feature reveal">
-            <span class="feature-icon">03</span>
-            <h3>Per-Server Setup</h3>
-            <p>Each Discord server links to its Roblox group with a numeric group ID, keeping configuration clean and explicit.</p>
+          <article class="tool-card reveal">
+            <h3>Manage Ranks</h3>
+            <p>Promote, demote, and set roles only when the verified Roblox account can manage ranks in the group.</p>
+            <code>/role member:user role:rank</code>
           </article>
-          <article class="feature reveal">
-            <span class="feature-icon">04</span>
-            <h3>Rank Controls</h3>
-            <p>Promote, demote, and set roles only when the verified Roblox account has the matching group permission.</p>
+          <article class="tool-card reveal">
+            <h3>Handle Join Requests</h3>
+            <p>View, accept, or decline pending Roblox group join requests without leaving Discord.</p>
+            <code>/join-request action:view</code>
           </article>
-          <article class="feature reveal">
-            <span class="feature-icon">05</span>
-            <h3>Join Requests</h3>
-            <p>View, accept, and decline Roblox group join requests from Discord with Roblox permission checks in the way.</p>
+          <article class="tool-card reveal">
+            <h3>Post Announcements</h3>
+            <p>Create Roblox community announcements from a Discord command after the server is linked.</p>
+            <code>/announce</code>
           </article>
-          <article class="feature reveal">
-            <span class="feature-icon">06</span>
-            <h3>Game Moderation</h3>
-            <p>Use Open Cloud-powered game bans, unbans, and ban logs for connected Roblox experiences.</p>
+          <article class="tool-card reveal">
+            <h3>Moderate Experiences</h3>
+            <p>Use game bans, unbans, and ban logs for Roblox experiences configured with Open Cloud.</p>
+            <code>/gameban user:username</code>
           </article>
         </div>
       </section>
 
-      <section id="security" class="section split">
+      <section id="permissions" class="section permission-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">Permission aware</p>
-          <h2>Discord commands, Roblox authority.</h2>
+          <p class="eyebrow">Roblox-first permissions</p>
+          <h2>No fake authority.</h2>
         </div>
-        <div class="security-list reveal">
-          <p>Rank-changing commands require the user to be verified as a Roblox group member with the role management permission.</p>
-          <p>Server setup is limited to Discord members with Manage Server permission.</p>
-          <p>Open Cloud keys and Roblox cookies stay in environment variables, never in the public website.</p>
+        <div class="permission-box reveal">
+          <p>Rank commands check the user's verified Roblox group role before running.</p>
+          <p>Server setup requires Discord Manage Server permission.</p>
+          <p>Secrets like Roblox cookies and Open Cloud keys stay out of the website.</p>
         </div>
       </section>
 
       <section id="setup" class="section setup-flow">
         <div class="section-heading reveal">
-          <p class="eyebrow">Setup flow</p>
-          <h2>Three clean steps</h2>
+          <p class="eyebrow">Setup</p>
+          <h2>Link a server, then verify.</h2>
         </div>
 
-        <div class="steps">
-          <article class="step reveal">
-            <span>1</span>
-            <h3>Invite the bot</h3>
-            <p>Add RoManager V2 to your Discord server with the permissions needed for slash commands.</p>
+        <div class="setup-list">
+          <article class="setup-item reveal">
+            <span>01</span>
+            <div>
+              <h3>Invite RoManager V2</h3>
+              <p>Add the bot to your Discord server.</p>
+            </div>
           </article>
-          <article class="step reveal">
-            <span>2</span>
-            <h3>Link a group</h3>
-            <p>Run <code>/setup group-id:&lt;id&gt;</code> to bind that Discord server to a Roblox group.</p>
+          <article class="setup-item reveal">
+            <span>02</span>
+            <div>
+              <h3>Set the Roblox group</h3>
+              <p>Run <code>/setup group-id:&lt;id&gt;</code> with your Roblox group ID.</p>
+            </div>
           </article>
-          <article class="step reveal">
-            <span>3</span>
-            <h3>Verify accounts</h3>
-            <p>Run <code>/verify</code>, then use account commands like <code>/list-accounts</code> and <code>/switch-account</code>.</p>
+          <article class="setup-item reveal">
+            <span>03</span>
+            <div>
+              <h3>Verify and work</h3>
+              <p>Use <code>/verify</code>, then manage accounts and group actions from Discord.</p>
+            </div>
           </article>
         </div>
       </section>
@@ -130,7 +145,7 @@
 
     <footer>
       <span>RoManager V2</span>
-      <span>Static site for the Discord-to-Roblox bot.</span>
+      <span>Roblox group management for Discord.</span>
     </footer>
 
     <script>
@@ -141,7 +156,7 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.16 });
+      }, { threshold: 0.18 });
 
       document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
     </script>
