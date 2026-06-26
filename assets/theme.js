@@ -35,4 +35,23 @@
       applyTheme(preferredTheme());
     }
   });
+
+  fetch("https://api.github.com/repos/HiddenAiden/RoManage-Website/commits/main")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Commit lookup failed");
+      }
+      return response.json();
+    })
+    .then((commit) => {
+      const shortSha = commit.sha.slice(0, 7);
+      document.querySelectorAll(".latest-commit").forEach((label) => {
+        label.textContent = `Latest commit: ${shortSha}`;
+      });
+    })
+    .catch(() => {
+      document.querySelectorAll(".latest-commit").forEach((label) => {
+        label.textContent = "Latest commit: unavailable";
+      });
+    });
 })();
