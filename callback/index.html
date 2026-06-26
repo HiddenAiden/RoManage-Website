@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RoManager V2 Callback</title>
+    <meta name="description" content="OAuth callback page for RoManager V2.">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body>
+    <main class="shell callback-shell">
+      <section class="panel callback-panel">
+        <p class="eyebrow">Roblox authorization</p>
+        <h1 id="status-title">Checking callback</h1>
+        <p id="status-message">
+          Reading the authorization response from Roblox.
+        </p>
+        <pre id="callback-data" aria-label="Callback details"></pre>
+      </section>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const title = document.getElementById("status-title");
+      const message = document.getElementById("status-message");
+      const data = document.getElementById("callback-data");
+
+      const code = params.get("code");
+      const state = params.get("state");
+      const error = params.get("error");
+      const errorDescription = params.get("error_description");
+
+      if (error) {
+        title.textContent = "Authorization failed";
+        message.textContent = errorDescription || error;
+        data.textContent = JSON.stringify({ error, errorDescription, state }, null, 2);
+      } else if (code) {
+        title.textContent = "Authorization received";
+        message.textContent = "A secure backend should exchange this code for tokens. Do not exchange tokens in GitHub Pages.";
+        data.textContent = JSON.stringify({ code: "[authorization code hidden on page]", state }, null, 2);
+      } else {
+        title.textContent = "No authorization code found";
+        message.textContent = "Open this page from the Roblox OAuth redirect flow.";
+        data.textContent = JSON.stringify({ state }, null, 2);
+      }
+    </script>
+  </body>
+</html>

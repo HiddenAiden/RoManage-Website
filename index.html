@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RoManager V2</title>
+    <meta name="description" content="Roblox account connection page for RoManager V2.">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Discord to Roblox management</p>
+          <h1>RoManager V2</h1>
+          <p class="lead">
+            Connect Roblox accounts, prepare server setup, and keep the Discord bot flow tidy.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h2>OAuth Status</h2>
+          <p>
+            The public pages are ready for GitHub Pages. OAuth token exchange still needs a secure backend before going live.
+          </p>
+          <a class="button" href="callback/">View Callback Page</a>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Setup steps">
+        <article>
+          <span>1</span>
+          <h2>Create Roblox App</h2>
+          <p>Register a Roblox OAuth app and add this site callback URL as an allowed redirect.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h2>Add Backend</h2>
+          <p>Use a secure server or worker to exchange authorization codes and store tokens.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h2>Connect Bot</h2>
+          <p>Have the Discord bot send users here and read verification results from your backend.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
