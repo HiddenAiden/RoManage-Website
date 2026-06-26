@@ -8,7 +8,11 @@
   --line: #d9dadd;
   --blue: #0092ff;
   --black: #111111;
+  --button-bg: #111111;
+  --button-border: #111111;
   --button-text: #ffffff;
+  --secondary-button-bg: #ffffff;
+  --secondary-button-text: #111111;
   --header-bg: rgba(245, 245, 245, 0.94);
   --code-bg: #eceef1;
   --support: #ff424d;
@@ -25,7 +29,11 @@
     --line: #303946;
     --blue: #4db2ff;
     --black: #f4f7fb;
-    --button-text: #0d1117;
+    --button-bg: #0092ff;
+    --button-border: #0092ff;
+    --button-text: #ffffff;
+    --secondary-button-bg: #151b23;
+    --secondary-button-text: #f4f7fb;
     --header-bg: rgba(13, 17, 23, 0.92);
     --code-bg: #202936;
     --support: #ff6b73;
@@ -192,20 +200,20 @@ dd {
   justify-content: center;
   min-height: 42px;
   padding: 0 16px;
-  border: 1px solid var(--black);
+  border: 1px solid var(--button-border);
   border-radius: 4px;
   font-weight: 800;
   text-decoration: none;
 }
 
 .button.primary {
-  background: var(--black);
+  background: var(--button-bg);
   color: var(--button-text);
 }
 
 .button.secondary {
-  background: var(--surface);
-  color: var(--black);
+  background: var(--secondary-button-bg);
+  color: var(--secondary-button-text);
 }
 
 .button.support {
@@ -328,7 +336,7 @@ code {
   margin-bottom: 16px;
   place-items: center;
   border-radius: 4px;
-  background: var(--black);
+  background: var(--button-bg);
   color: var(--button-text);
   font-weight: 800;
 }
