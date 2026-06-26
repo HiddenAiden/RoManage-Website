@@ -53,8 +53,7 @@ nav {
   text-decoration: none;
 }
 
-.brand-mark,
-.roblox-mark {
+.brand-mark {
   position: relative;
   display: inline-block;
   background: var(--black);
@@ -66,15 +65,7 @@ nav {
   height: 28px;
 }
 
-.roblox-mark {
-  width: 54px;
-  height: 54px;
-  flex: 0 0 auto;
-  transform: rotate(-8deg);
-}
-
-.brand-mark::after,
-.roblox-mark::after {
+.brand-mark::after {
   position: absolute;
   content: "";
   background: var(--surface);
@@ -84,8 +75,11 @@ nav {
   inset: 10px;
 }
 
-.roblox-mark::after {
-  inset: 19px;
+.product-logo {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  object-fit: contain;
 }
 
 nav {
