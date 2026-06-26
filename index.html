@@ -14,138 +14,117 @@
         <span>RoManager V2</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#tools">Tools</a>
-        <a href="#permissions">Permissions</a>
+        <a href="#commands">Commands</a>
         <a href="#setup">Setup</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero section">
+      <section class="hero">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Roblox group control</p>
-          <h1>Run your Roblox group from Discord.</h1>
+          <p class="eyebrow">Roblox group management</p>
+          <h1>Simple Roblox staff tools inside Discord.</h1>
           <p class="lead">
-            RoManager V2 connects Discord servers to Roblox groups for verification, ranks, join requests, announcements, and moderation.
+            Verify Roblox accounts, link Discord servers to groups, handle rank changes, review join requests, and moderate experiences with permission checks built in.
           </p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#tools">See Tools</a>
-            <a class="button secondary" href="#setup">Setup</a>
+          <div class="hero-actions">
+            <a class="button primary" href="#setup">Set up a server</a>
+            <a class="button secondary" href="#commands">View commands</a>
           </div>
         </div>
 
-        <aside class="roblox-panel reveal" aria-label="Roblox group preview">
-          <div class="preview-top">
-            <div class="group-icon"></div>
+        <aside class="group-card reveal" aria-label="Linked group summary">
+          <div class="group-card-top">
+            <div class="roblox-mark"></div>
             <div>
-              <strong>Linked Group</strong>
-              <span>Configured with /setup</span>
+              <strong>Linked Roblox Group</strong>
+              <span>/setup group-id:123456</span>
             </div>
           </div>
-          <div class="stat-row">
-            <span>Verified users</span>
-            <strong>Multi-account</strong>
-          </div>
-          <div class="stat-row">
-            <span>Rank actions</span>
-            <strong>Permission checked</strong>
-          </div>
-          <div class="stat-row">
-            <span>Server config</span>
-            <strong>Per Discord</strong>
-          </div>
-          <div class="command-strip">/setup group-id:123456</div>
+          <dl>
+            <div>
+              <dt>Verification</dt>
+              <dd>RoVer or profile challenge</dd>
+            </div>
+            <div>
+              <dt>Rank commands</dt>
+              <dd>Roblox permission checked</dd>
+            </div>
+            <div>
+              <dt>Accounts</dt>
+              <dd>Multiple saved accounts</dd>
+            </div>
+          </dl>
         </aside>
       </section>
 
-      <section id="tools" class="section">
+      <section id="commands" class="section commands-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">Bot tools</p>
-          <h2>Built around Roblox group work.</h2>
-          <p>Commands are focused on the jobs group staff actually repeat: verifying accounts, changing roles, handling requests, and checking users.</p>
+          <p class="eyebrow">Commands</p>
+          <h2>The main tools</h2>
         </div>
 
-        <div class="tool-grid">
-          <article class="tool-card reveal">
-            <h3>Verify Roblox Accounts</h3>
-            <p>Use RoVer when available, or verify through a profile challenge handled by the bot.</p>
-            <code>/verify user:username</code>
-          </article>
-          <article class="tool-card reveal">
-            <h3>Save Multiple Accounts</h3>
-            <p>Keep multiple Roblox accounts saved, switch selected accounts, and remove accounts you no longer use.</p>
-            <code>/switch-account user:username</code>
-          </article>
-          <article class="tool-card reveal">
-            <h3>Manage Ranks</h3>
-            <p>Promote, demote, and set roles only when the verified Roblox account can manage ranks in the group.</p>
-            <code>/role member:user role:rank</code>
-          </article>
-          <article class="tool-card reveal">
-            <h3>Handle Join Requests</h3>
-            <p>View, accept, or decline pending Roblox group join requests without leaving Discord.</p>
-            <code>/join-request action:view</code>
-          </article>
-          <article class="tool-card reveal">
-            <h3>Post Announcements</h3>
-            <p>Create Roblox community announcements from a Discord command after the server is linked.</p>
-            <code>/announce</code>
-          </article>
-          <article class="tool-card reveal">
-            <h3>Moderate Experiences</h3>
-            <p>Use game bans, unbans, and ban logs for Roblox experiences configured with Open Cloud.</p>
-            <code>/gameban user:username</code>
-          </article>
+        <div class="command-list reveal">
+          <div class="command-row">
+            <code>/verify</code>
+            <p>Verify a Roblox account through RoVer or a profile challenge.</p>
+          </div>
+          <div class="command-row">
+            <code>/list-accounts</code>
+            <p>See the Roblox accounts saved to your Discord account.</p>
+          </div>
+          <div class="command-row">
+            <code>/switch-account</code>
+            <p>Choose which verified Roblox account is active in a server.</p>
+          </div>
+          <div class="command-row">
+            <code>/role</code>
+            <p>Set a member's Roblox group role if your verified account has permission.</p>
+          </div>
+          <div class="command-row">
+            <code>/join-request</code>
+            <p>View, accept, or decline Roblox group join requests.</p>
+          </div>
+          <div class="command-row">
+            <code>/gameban</code>
+            <p>Ban users from a Roblox experience with Open Cloud support.</p>
+          </div>
         </div>
       </section>
 
-      <section id="permissions" class="section permission-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Roblox-first permissions</p>
-          <h2>No fake authority.</h2>
-        </div>
-        <div class="permission-box reveal">
-          <p>Rank commands check the user's verified Roblox group role before running.</p>
-          <p>Server setup requires Discord Manage Server permission.</p>
-          <p>Secrets like Roblox cookies and Open Cloud keys stay out of the website.</p>
-        </div>
-      </section>
-
-      <section id="setup" class="section setup-flow">
+      <section id="setup" class="section setup-section">
         <div class="section-heading reveal">
           <p class="eyebrow">Setup</p>
-          <h2>Link a server, then verify.</h2>
+          <h2>Three steps</h2>
         </div>
 
-        <div class="setup-list">
-          <article class="setup-item reveal">
-            <span>01</span>
-            <div>
-              <h3>Invite RoManager V2</h3>
-              <p>Add the bot to your Discord server.</p>
-            </div>
-          </article>
-          <article class="setup-item reveal">
-            <span>02</span>
-            <div>
-              <h3>Set the Roblox group</h3>
-              <p>Run <code>/setup group-id:&lt;id&gt;</code> with your Roblox group ID.</p>
-            </div>
-          </article>
-          <article class="setup-item reveal">
-            <span>03</span>
-            <div>
-              <h3>Verify and work</h3>
-              <p>Use <code>/verify</code>, then manage accounts and group actions from Discord.</p>
-            </div>
-          </article>
+        <div class="setup-steps">
+          <div class="setup-step reveal">
+            <span>1</span>
+            <h3>Invite the bot</h3>
+            <p>Add RoManager V2 to your Discord server.</p>
+          </div>
+          <div class="setup-step reveal">
+            <span>2</span>
+            <h3>Link your group</h3>
+            <p>Run <code>/setup group-id:&lt;id&gt;</code>.</p>
+          </div>
+          <div class="setup-step reveal">
+            <span>3</span>
+            <h3>Verify accounts</h3>
+            <p>Run <code>/verify</code> and start using group commands.</p>
+          </div>
         </div>
+
+        <p class="note reveal">
+          Rank-changing commands require the user's verified Roblox account to have the proper group permission.
+        </p>
       </section>
     </main>
 
     <footer>
       <span>RoManager V2</span>
-      <span>Roblox group management for Discord.</span>
+      <span>Roblox group tools for Discord.</span>
     </footer>
 
     <script>
@@ -156,7 +135,7 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.18 });
+      }, { threshold: 0.2 });
 
       document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
     </script>
