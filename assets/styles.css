@@ -164,7 +164,8 @@ nav a:hover {
   gap: 10px;
 }
 
-.support-link {
+.topbar-actions .support-link,
+.topbar-actions .support-link:visited {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -178,7 +179,12 @@ nav a:hover {
   text-decoration: none;
 }
 
-.theme-toggle {
+.topbar-actions .support-link:hover {
+  background: #0074cc;
+  color: #ffffff;
+}
+
+.topbar-actions .theme-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -195,7 +201,7 @@ nav a:hover {
   cursor: pointer;
 }
 
-.theme-toggle:hover {
+.topbar-actions .theme-toggle:hover {
   border-color: var(--blue);
 }
 
